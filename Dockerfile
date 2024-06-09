@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     apache2-utils \
     && rm -rf /var/lib/apt/lists/*
 # Appliction
-ENV HTTP_LOCAL_CONF cashnow.local.conf
+ENV HTTP_LOCAL_CONF easycash.local.conf
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
