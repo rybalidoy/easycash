@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from './lib/components/ui/button';
 import { useToast } from './lib/components/ui/use-toast';
+import Navbar from './components/generic/Navbar';
+import { routes } from './routes/routes';
+import { Outlet } from 'react-router-dom';
 
 
 const App = () => {
@@ -9,15 +12,17 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <h1 className='font-bold text-red-600 text-6xl p-2 m-1'>Ryan Project Template</h1>
-      <h2 className='font-semibold text-teal-500 p-2 m-1'>Tailwind + Shadcn ui</h2>
-      <div className='p-2'>
-        <Button variant={'default'} onClick={() => {
-          toast({
-            title: "You clicked me",
-            description: "You gay"
-        })}}>Click Me</Button>
+      <div className='grid grid-cols-12 grid-flow-row-dense p-4'>
+        <div className='col-span-2'>
+          <Navbar items={routes}/>
+        </div>
+        <div className='col-span-10 p-4'>
+          <Outlet />
+        </div>
       </div>
+
+
+      
     </React.Fragment>
   );
 }
